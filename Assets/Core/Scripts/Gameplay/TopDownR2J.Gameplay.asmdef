@@ -1,3 +1,15 @@
-﻿{
-	"name": "TopDownR2J.Gameplay"
+{
+    "name": "TopDownR2J.Gameplay",
+    "references": [
+        "Unity.InputSystem"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

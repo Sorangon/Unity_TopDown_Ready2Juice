@@ -5,13 +5,49 @@
     /// Base character for Top Down Shooter
     /// </summary>
     public class TDSCharacterMovements : MonoBehaviour {
-        void Start() {
+        #region Settings
+        [Header("Movement")]
+        [Min(0f), SerializeField] private float movementSpeed = 8f;
+        [Min(0f), SerializeField] private float accelerationTime = 0.3f;
+        [Min(0f), SerializeField] private float decelerationTime = 0.1f;
+        [SerializeField, Range(0f, 1f)] private float movementDirectionDeadZone = 0.1f;
 
+        [Header("References")]
+        [SerializeField] private new Rigidbody rigidbody = null;
+        #endregion
+
+        #region Currents
+        /// <summary> Movement direction on XZ plane </summary>
+        public Vector2 MovementDirection { get; set; } = Vector2.zero;
+
+        private Vector3 velocity = Vector3.zero;
+        private Vector3 movementVector = Vector3.zero;
+        private float currentSpeedRatio = 0f;
+        #endregion
+
+        #region Callbacks
+        private void FixedUpdate() {
+            CalculateMovement();
+            rigidbody.velocity = velocity * currentSpeedRatio;
         }
+        #endregion
 
-        void Update() {
+        #region Movement
+        private void CalculateMovement() {
+            if(MovementDirection.sqrMagnitude > movementDirectionDeadZone * movementDirectionDeadZone) {
+                movementVector = new Vector3(MovementDirection.x, 0f, MovementDirection.y);
+            }
 
+            float movementMagnitude = MovementDirection.magnitude;
+
+            if (movementMagnitude >= currentSpeedRatio && movementMagnitude > 0f) {
+                currentSpeedRatio = Mathf.Min(currentSpeedRatio + Time.deltaTime/accelerationTime , 1f);
+            } else {
+                currentSpeedRatio = Mathf.Max(currentSpeedRatio - Time.deltaTime / decelerationTime, 0f);
+            }
+
+            velocity = movementVector.normalized * movementSpeed * currentSpeedRatio;
         }
+        #endregion
     }
-
 }
