@@ -372,8 +372,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79a24e8c4fce3f41a54b613955fdc86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetCharacter: {fileID: 7198249628101801500}
+  target: {fileID: 7198249628101801500}
   offset: {x: -3, y: 8.12, z: -3}
+  damping: 0.2
 --- !u!4 &1114990707
 Transform:
   m_ObjectHideFlags: 0

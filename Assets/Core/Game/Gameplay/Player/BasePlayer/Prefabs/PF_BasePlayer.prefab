@@ -169,8 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcabc5e5bb13191429f3c76c657ecb64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 10
+  movementSpeed: 6
   accelerationTime: 0.15
   decelerationTime: 0.1
-  movementDirectionDeadZone: 0.1
   rigidbody: {fileID: 2789222430972134205}

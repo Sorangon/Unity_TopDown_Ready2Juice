@@ -1,5 +1,4 @@
 ﻿namespace TopDownShooter.Gameplay {
-    using System;
     using UnityEngine;
 
     /// <summary>
@@ -8,11 +7,20 @@
     [ExecuteAlways]
     public class TopDownCamera : MonoBehaviour {
         #region Settings
-        [SerializeField] private Transform targetCharacter = null;
+        [SerializeField] private Transform target = null;
         [SerializeField] private Vector3 offset = Vector3.up * 5f;
+        [SerializeField] private float damping = 0.5f;
+        #endregion
+
+        #region Current
+        private Vector3 currentCenterOfView = Vector3.zero;
         #endregion
 
         #region Callbacks
+        private void Awake() {
+            currentCenterOfView = target.position;
+        }
+
         private void LateUpdate() {
             SetOffsetTransform();
         }
@@ -21,10 +29,16 @@
 
         #region Transform
         private void SetOffsetTransform() {
-            Vector3 offsetedPos = targetCharacter.position + offset;
+            if (damping > 0f) {
+                currentCenterOfView = Vector3.Lerp(currentCenterOfView, target.position, Time.deltaTime / damping);
+            } else {
+                currentCenterOfView = target.position;
+            }
+
+            Vector3 offsetedPos = currentCenterOfView + offset;
             transform.position = offsetedPos;
 
-            Quaternion lookAtRotation = Quaternion.LookRotation(targetCharacter.position - offsetedPos);
+            Quaternion lookAtRotation = Quaternion.LookRotation(currentCenterOfView - offsetedPos);
             transform.rotation = lookAtRotation;
         }
         #endregion

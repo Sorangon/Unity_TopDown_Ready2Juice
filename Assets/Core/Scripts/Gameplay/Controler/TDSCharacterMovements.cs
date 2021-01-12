@@ -10,7 +10,6 @@
         [Min(0f), SerializeField] private float movementSpeed = 8f;
         [Min(0f), SerializeField] private float accelerationTime = 0.3f;
         [Min(0f), SerializeField] private float decelerationTime = 0.1f;
-        [SerializeField, Range(0f, 1f)] private float movementDirectionDeadZone = 0.1f;
 
         [Header("References")]
         [SerializeField] private new Rigidbody rigidbody = null;
@@ -34,11 +33,11 @@
 
         #region Movement
         private void CalculateMovement() {
-            if(MovementDirection.sqrMagnitude > movementDirectionDeadZone * movementDirectionDeadZone) {
+            float movementMagnitude = MovementDirection.magnitude;
+
+            if(MovementDirection.sqrMagnitude > 0f) {
                 movementVector = new Vector3(MovementDirection.x, 0f, MovementDirection.y);
             }
-
-            float movementMagnitude = MovementDirection.magnitude;
 
             if (movementMagnitude >= currentSpeedRatio && movementMagnitude > 0f) {
                 currentSpeedRatio = Mathf.Min(currentSpeedRatio + Time.deltaTime/accelerationTime , 1f);
