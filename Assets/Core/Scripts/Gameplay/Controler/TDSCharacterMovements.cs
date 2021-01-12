@@ -33,14 +33,14 @@
 
         #region Movement
         private void CalculateMovement() {
-            float movementMagnitude = MovementDirection.magnitude;
-
             if(MovementDirection.sqrMagnitude > 0f) {
                 movementVector = new Vector3(MovementDirection.x, 0f, MovementDirection.y);
             }
 
-            if (movementMagnitude >= currentSpeedRatio && movementMagnitude > 0f) {
-                currentSpeedRatio = Mathf.Min(currentSpeedRatio + Time.deltaTime/accelerationTime , 1f);
+            float movementMagnitude = MovementDirection.magnitude;
+
+            if (movementMagnitude + 0.01f >= currentSpeedRatio && movementMagnitude > 0f) {
+                currentSpeedRatio = Mathf.Min(currentSpeedRatio + Time.deltaTime/accelerationTime , movementMagnitude);
             } else {
                 currentSpeedRatio = Mathf.Max(currentSpeedRatio - Time.deltaTime / decelerationTime, 0f);
             }

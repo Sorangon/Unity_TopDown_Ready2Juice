@@ -157,6 +157,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetCharacter: {fileID: 7198249628101801501}
   currentWeapon: {fileID: 0}
+  mouseRaycastMask:
+    serializedVersion: 2
+    m_Bits: 256
+  maxDistanceRadius: 5
 --- !u!114 &7198249628101801501
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/Core/Application/Inputs/TopDownInputs.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/Core/Scripts/Gameplay/Inputs/TopDownInputs.inputactions'
 
 using System;
 using System.Collections;
@@ -190,7 +190,7 @@ public class @TopDownInputs : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""8c8e490b-c610-4785-884f-f04217b23ca4"",
-                    ""path"": ""<Pointer>/delta"",
+                    ""path"": ""<Pointer>/position"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse;Touch"",
