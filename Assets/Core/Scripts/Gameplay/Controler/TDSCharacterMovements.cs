@@ -13,6 +13,7 @@
 
         [Header("References")]
         [SerializeField] private new Rigidbody rigidbody = null;
+        [SerializeField] private TDSPlayerControler owner = null;
         #endregion
 
         #region Currents
@@ -27,6 +28,7 @@
         #region Callbacks
         private void FixedUpdate() {
             CalculateMovement();
+            SetRotation();
             rigidbody.velocity = velocity * currentSpeedRatio;
         }
         #endregion
@@ -46,6 +48,10 @@
             }
 
             velocity = movementVector.normalized * movementSpeed * currentSpeedRatio;
+        }
+
+        private void SetRotation() {
+            rigidbody.MoveRotation(Quaternion.AngleAxis(owner.AimAngle, Vector3.up));
         }
         #endregion
     }

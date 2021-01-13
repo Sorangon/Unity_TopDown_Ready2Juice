@@ -17,6 +17,7 @@
 
         #region Properties
         public Vector3 AimVector => aimVector;
+        public float AimAngle => Mathf.Atan2(AimVector.x, AimVector.z) * Mathf.Rad2Deg;
         #endregion
 
         #region Current
@@ -27,13 +28,18 @@
         #region Callbacks
         private void Awake() {
             inputs = new TopDownInputs();
+            currentWeapon.BindToControler(this);
         }
 
         private void OnEnable() {
             inputs.Enable();
+            inputs.Player.Fire.started += OnFireStart;
+            inputs.Player.Fire.canceled += OnFireCanceled;
         }
 
         private void OnDisable() {
+            inputs.Player.Fire.started -= OnFireStart;
+            inputs.Player.Fire.canceled -= OnFireCanceled;
             inputs.Disable();
         }
 
@@ -49,6 +55,7 @@
             Vector2 cameraRelativeDir = Quaternion.AngleAxis(MainCameraBuffer.Get().transform.eulerAngles.y - 90f, Vector3.forward) * inputDirection;
             targetCharacter.MovementDirection = cameraRelativeDir;
         }
+
         private void UpdateAimDirection() {
             Vector2 lookInputValue = inputs.Player.Look.ReadValue<Vector2>();
 
@@ -76,6 +83,29 @@
             }
 
             Debug.DrawRay(transform.position, aimVector * 5f, Color.red);
+        }
+        #endregion
+
+        #region Buttons Callbacks
+        private void OnFireStart(InputAction.CallbackContext context) {
+            if(!ReferenceEquals(currentWeapon, null)) {
+                currentWeapon.Trigger();
+            }
+        }
+
+        private void OnFireCanceled(InputAction.CallbackContext context) {
+            if (!ReferenceEquals(currentWeapon, null)) {
+                currentWeapon.Release();
+            }
+        }
+        #endregion
+
+        #region Weapon
+        /// <summary>
+        /// Register the current new weapon
+        /// </summary>
+        public void SetWeapon(Weapon weapon) {
+
         }
         #endregion
     }
