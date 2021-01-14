@@ -7,6 +7,7 @@
     /// </summary>
     public class TDSPlayerControler : MonoBehaviour {
         #region Settings
+        [Header("References")]
         [SerializeField] private TDSCharacterMovements targetCharacter = null;
         [SerializeField] private Weapon currentWeapon = null;
 
@@ -18,9 +19,13 @@
         #region Properties
         public Vector3 AimVector => aimVector;
         public float AimAngle => Mathf.Atan2(AimVector.x, AimVector.z) * Mathf.Rad2Deg;
+        public TDSCharacterMovements CharacterMovements => targetCharacter;
+
+        public static TDSPlayerControler CurrentControlerInstance => currentControlerInstance;
         #endregion
 
         #region Current
+        private static TDSPlayerControler currentControlerInstance = null;
         private TopDownInputs inputs = null;
         private Vector3 aimVector = Vector3.zero;
         #endregion
@@ -35,6 +40,7 @@
             inputs.Enable();
             inputs.Player.Fire.started += OnFireStart;
             inputs.Player.Fire.canceled += OnFireCanceled;
+            currentControlerInstance = this;
         }
 
         private void OnDisable() {

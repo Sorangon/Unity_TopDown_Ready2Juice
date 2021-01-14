@@ -25,11 +25,15 @@
 
         #region Callbacks
         private void Awake() {
-            currentCenterOfView = target.position;
+            if(target != null) {
+                currentCenterOfView = target.position;
+            }
         }
 
         private void LateUpdate() {
-            SetOffsetTransform();
+            if(!ReferenceEquals(target, null)) {
+                SetOffsetTransform();
+            }
 
             if(!ReferenceEquals(playerControler, null)) {
                 AimDirectionOffset();

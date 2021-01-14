@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4475466583933869648}
   - component: {fileID: 2560226446776833513}
   - component: {fileID: -8902633170069287303}
-  - component: {fileID: 156413419404864352}
   - component: {fileID: 4263549430801068292}
+  - component: {fileID: 156413419404864352}
   m_Layer: 0
   m_Name: PF_SimpleProjectile
   m_TagString: Untagged
@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 454a459306e2ee54ba9c1c767b7ddcca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collider: {fileID: 7457616593388421794}
 --- !u!114 &-8902633170069287303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,10 +60,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cff9d0031c4a61944992d89f390a51c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: {x: 0, y: 0, z: 20}
+  direction: {x: 0, y: 0, z: 30}
   speedMultiplier: 1
   worldSpaceRelative: 0
   rigidbody: {fileID: 156413419404864352}
+--- !u!114 &4263549430801068292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 862852281194001470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0944486d93affea4fb7a3bf6551f33ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifespan: 2
+  sendToPool: 0
 --- !u!54 &156413419404864352
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -79,20 +94,6 @@ Rigidbody:
   m_Interpolate: 2
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!114 &4263549430801068292
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 862852281194001470}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0944486d93affea4fb7a3bf6551f33ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifespan: 2
-  sendToPool: 0
 --- !u!1 &2568813758748130465
 GameObject:
   m_ObjectHideFlags: 0

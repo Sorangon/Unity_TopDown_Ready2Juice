@@ -1,5 +1,7 @@
 ﻿namespace TopDownShooter.Gameplay {
     using UnityEngine;
+    using NaughtyAttributes;
+
     public class TranslationPhysicMovement : MonoBehaviour {
         #region Settings
         [Header("Settings")]
@@ -8,7 +10,7 @@
         [SerializeField] private bool worldSpaceRelative = false;
 
         [Header("References")]
-        [SerializeField] private new Rigidbody rigidbody = null;
+        [SerializeField, Required] private new Rigidbody rigidbody = null;
         #endregion
 
         #region Callbacks

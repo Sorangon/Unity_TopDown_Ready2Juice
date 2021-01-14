@@ -13,6 +13,7 @@
 
         [Header("References")]
         [SerializeField] private new Rigidbody rigidbody = null;
+        [SerializeField] private new Collider collider = null;
         [SerializeField] private TDSPlayerControler owner = null;
         #endregion
 
@@ -24,6 +25,12 @@
         private Vector3 movementVector = Vector3.zero;
         private float currentSpeedRatio = 0f;
         #endregion
+
+        #region Properties
+        public Rigidbody AttachedRigidbody => rigidbody;
+        public Collider AttachedCollider => collider;
+        #endregion
+
 
         #region Callbacks
         private void FixedUpdate() {

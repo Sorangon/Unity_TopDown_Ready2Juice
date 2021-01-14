@@ -1,11 +1,12 @@
 ﻿namespace TopDownShooter.Gameplay {
     using UnityEngine;
+    using NaughtyAttributes;
 
     /// <summary>
     /// Stores the main camera in a static reference value
     /// </summary>
     public class MainCameraBuffer : MonoBehaviour {
-        [SerializeField] private new Camera camera = null;
+        [SerializeField, Required] private new Camera camera = null;
 
         private static Camera mainCamera = null;
 

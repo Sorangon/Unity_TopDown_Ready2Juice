@@ -1,5 +1,6 @@
 ﻿namespace TopDownShooter.Gameplay {
     using UnityEngine;
+    using NaughtyAttributes;
 
     /// <summary>
     /// Can shoot projectiles in a target direction
@@ -8,7 +9,7 @@
         #region Settings
         [Header("Gun Settings")]
         [SerializeField] private float spread = 3f;
-        [SerializeField] private Projectile projectile;
+        [SerializeField, Required] private Projectile projectile;
         [SerializeField] private Transform muzzleTransform;
         #endregion
 
@@ -20,6 +21,7 @@
             }
             Quaternion projRotation = Quaternion.AngleAxis(Owner.AimAngle + spreadAngle, Vector3.up);
             Projectile instance = Instantiate(projectile, muzzleTransform.position, projRotation);
+            instance.SetIgnoredCollider(Owner.CharacterMovements.AttachedCollider);
         }
         #endregion
     }
