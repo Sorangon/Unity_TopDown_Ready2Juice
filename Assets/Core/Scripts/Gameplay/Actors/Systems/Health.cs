@@ -64,6 +64,7 @@
         #endregion
 
         #region Die
+        [ContextMenu("Die")]
         public void Die() {
             if(deathBehaviour != null) {
                 deathBehaviour.Execute(deathBehaviourParameter);

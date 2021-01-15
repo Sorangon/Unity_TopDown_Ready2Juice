@@ -1,18 +1,51 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿namespace TopDownShooter.Gameplay {
+    using UnityEngine;
 
-public class Timer : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    /// <summary>
+    /// A timer that trigger a callback when elapsed
+    /// Can be paused
+    /// Update by the Timer Handle
+    /// </summary>
+    public class Timer {
+        #region Properties
+        public float Duration => duration;
+        #endregion
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        #region Current
+        public bool isPlaying = true;
+        public float elapsedTime = 0f;
+        private float duration = 1f;
+        private System.Action callback = null;
+        #endregion
+
+        #region Constructors
+        public Timer(float duration, System.Action completeCallback) {
+            this.duration = duration;
+            callback = completeCallback;
+        }
+        #endregion
+
+        #region Behaviour
+        public void Play() {
+            TimerHandle.RegisterTimer(this);
+        }
+
+        public void Update() {
+            elapsedTime += Time.deltaTime;
+
+            if (elapsedTime > duration) {
+                Stop();
+            }
+        }
+
+        public void Reset() {
+            elapsedTime = 0f;
+        }
+
+        public void Stop() {
+            callback.Invoke();
+            TimerHandle.UnregisterTimer(this);
+        }
+        #endregion
     }
 }

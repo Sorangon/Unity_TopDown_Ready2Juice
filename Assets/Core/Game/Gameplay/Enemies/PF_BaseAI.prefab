@@ -63,9 +63,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f54148c5ab0150d4480b64163e849d79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stopDistance: 3
+  stopDistance: 6
   weapon: {fileID: 0}
   movements: {fileID: 6059559680189850045}
+  sightRadius: 0.5
+  sightLayers:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!114 &6059559680189850045
 MonoBehaviour:
   m_ObjectHideFlags: 0

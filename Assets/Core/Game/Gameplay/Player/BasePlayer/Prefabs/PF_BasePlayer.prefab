@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  deathBehaviour: {fileID: 0}
+  deathBehaviour: {fileID: 11400000, guid: 264678d842c90de4d881ca3c4bc01300, type: 2}
   deathBehaviourParameter: {fileID: 7198249628101801502}
 --- !u!114 &7198249628101801502
 MonoBehaviour:

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -8902633170069287303}
   - component: {fileID: 4263549430801068292}
   - component: {fileID: 156413419404864352}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PF_SimpleProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 454a459306e2ee54ba9c1c767b7ddcca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damages: 20
   collider: {fileID: 7457616593388421794}
 --- !u!114 &-8902633170069287303
 MonoBehaviour:
@@ -106,7 +107,7 @@ GameObject:
   - component: {fileID: 274665982118596589}
   - component: {fileID: 7622330464123402007}
   - component: {fileID: 7457616593388421794}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}

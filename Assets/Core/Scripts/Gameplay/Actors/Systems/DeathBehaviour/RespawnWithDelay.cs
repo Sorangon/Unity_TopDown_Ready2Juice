@@ -4,13 +4,32 @@
     /// <summary>
     /// Respawns the character with a delay
     /// </summary>
+    [CreateAssetMenu(fileName = "newRespawnWithDelay", menuName = "Top Down Shooter/Death Behaviours/Respawn With Delay", order = 1000)]
     public class RespawnWithDelay : DeathBehaviour {
+        #region Datas
+        [SerializeField] private float respawnDelay = 1f;
+        #endregion
+
+        #region Currents
+        TDSPlayerControler targetPlayer = null;
+        #endregion
+
+        #region Behaviour
         public override void Execute(Object target) {
-            //if(target)
+            if (target is TDSPlayerControler) {
+                targetPlayer = target as TDSPlayerControler;
+                targetPlayer.gameObject.SetActive(false);
+                Timer t = new Timer(respawnDelay, Respawn);
+                t.Play();
+            } else {
+                Debug.LogError("Respawn With Delay Death Behaviour must take a TDS Player Controler parameter");
+            }
         }
 
         private void Respawn() {
-
-        }
+            targetPlayer.gameObject.SetActive(true);
+            Debug.Log("Respawn");
+        } 
+        #endregion
     }
 }
