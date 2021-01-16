@@ -7,5 +7,4 @@
     public abstract class DeathBehaviour : ScriptableObject{
         public abstract void Execute(Object target);
     }
-
 }

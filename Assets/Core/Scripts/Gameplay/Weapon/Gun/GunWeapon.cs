@@ -21,7 +21,6 @@
             }
             Quaternion projRotation = Quaternion.AngleAxis(Owner.AimAngle + spreadAngle, Vector3.up);
             Projectile instance = Instantiate(projectile, muzzleTransform.position, projRotation);
-            instance.SetIgnoredCollider(Owner.CharacterMovements.AttachedCollider);
         }
         #endregion
     }

@@ -5,11 +5,12 @@
     /// <summary>
     /// Base player controler for Top Down Shooter
     /// </summary>
-    public class TDSPlayerControler : MonoBehaviour {
+    public class TDSPlayerControler : TDSControler {
         #region Settings
         [Header("References")]
         [SerializeField] private TDSCharacterMovements targetCharacter = null;
         [SerializeField] private Weapon currentWeapon = null;
+        [SerializeField] private Health healthSystem = null;
 
         [Header("Mouse")]
         [SerializeField] private LayerMask mouseRaycastMask = new LayerMask();
@@ -17,17 +18,14 @@
         #endregion
 
         #region Properties
-        public Vector3 AimVector => aimVector;
-        public float AimAngle => Mathf.Atan2(AimVector.x, AimVector.z) * Mathf.Rad2Deg;
         public TDSCharacterMovements CharacterMovements => targetCharacter;
-
         public static TDSPlayerControler CurrentControlerInstance => currentControlerInstance;
+        public Health HealthSystem => healthSystem;
         #endregion
 
         #region Current
         private static TDSPlayerControler currentControlerInstance = null;
         private TopDownInputs inputs = null;
-        private Vector3 aimVector = Vector3.zero;
         #endregion
 
         #region Callbacks
@@ -87,8 +85,9 @@
             } else {
                 aimVector = Vector3.zero;
             }
-
-            Debug.DrawRay(transform.position, aimVector * 5f, Color.red);
+#if UNITY_EDITOR
+            Debug.DrawRay(transform.position, aimVector * 5f, Color.red); 
+#endif
         }
         #endregion
 
@@ -111,7 +110,7 @@
         /// Register the current new weapon
         /// </summary>
         public void SetWeapon(Weapon weapon) {
-
+            currentWeapon = weapon;
         }
         #endregion
     }

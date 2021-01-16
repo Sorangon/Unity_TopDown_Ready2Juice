@@ -14,10 +14,10 @@ TagManager:
   - 
   - 
   - Ground
-  - Projectile
-  - Actor
-  - 
-  - 
+  - PlayerProjectile
+  - EnemyProjectile
+  - Player
+  - Enemy
   - 
   - 
   - 

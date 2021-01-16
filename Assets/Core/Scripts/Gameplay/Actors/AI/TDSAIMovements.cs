@@ -19,6 +19,7 @@
         #region Currents
         private float currentUpdateTimer = 0f;
         public bool IsStopped => navMeshAgent.isStopped;
+        public NavMeshAgent AttachedNavMeshAgent => navMeshAgent;
         #endregion
 
         #region Callbacks
@@ -28,7 +29,6 @@
             }
 
             currentUpdateTimer = Random.Range(0f, UPDATE_RATE);
-            navMeshAgent.updateRotation = false;
         }
 
         private void Update() {

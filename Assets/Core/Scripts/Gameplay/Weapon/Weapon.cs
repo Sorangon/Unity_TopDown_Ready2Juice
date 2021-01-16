@@ -1,6 +1,5 @@
 ﻿namespace TopDownShooter.Gameplay {
     using UnityEngine;
-    using UnityEngine.Events;
 
     /// <summary>
     /// Base class for weapons
@@ -10,21 +9,22 @@
         [Header("Weapon Settings")]
         [SerializeField] protected float reloadTime = 0.2f;
         [SerializeField] private bool continuousAttack = false;
+        [SerializeField] private bool startWithRandomReloadTime = false;
         #endregion
 
         #region Currents
-        private TDSPlayerControler owner = null;
+        private TDSControler owner = null;
         protected float currentReloadTime = 0f;
         private bool holding = false;
         #endregion
 
         #region Properties
         public bool Reloaded => currentReloadTime > reloadTime;
-        public TDSPlayerControler Owner => owner;
+        public TDSControler Owner => owner;
         #endregion
 
         #region Initialization
-        public void BindToControler(TDSPlayerControler owner) {
+        public void BindToControler(TDSControler owner) {
             this.owner = owner;
             transform.parent = owner.transform;
             transform.localPosition = Vector3.zero;
@@ -33,6 +33,10 @@
         #endregion
 
         #region Callbacks
+        private void OnEnable() {
+            holding = false;
+        }
+
         private void Update() {
             if(!Reloaded) {
                 currentReloadTime += Time.deltaTime;
@@ -50,6 +54,9 @@
 
         #region Actions
         public void Trigger() {
+            if (startWithRandomReloadTime) {
+                currentReloadTime = Random.Range(0f, reloadTime);
+            }
             holding = true;
         }
 

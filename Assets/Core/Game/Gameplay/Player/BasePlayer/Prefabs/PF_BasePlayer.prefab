@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2096640228}
   - component: {fileID: 2096640227}
   - component: {fileID: 2096640226}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 7198249628101801502}
   - component: {fileID: 7198249628101801501}
   - component: {fileID: 2789222430972134205}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: PF_BasePlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,8 +156,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86a3b9fe04665e349a5e2267f1a6bebd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collider: {fileID: 2096640226}
   targetCharacter: {fileID: 7198249628101801501}
   currentWeapon: {fileID: 6298890818568860564}
+  healthSystem: {fileID: 2267810010279644408}
   mouseRaycastMask:
     serializedVersion: 2
     m_Bits: 256

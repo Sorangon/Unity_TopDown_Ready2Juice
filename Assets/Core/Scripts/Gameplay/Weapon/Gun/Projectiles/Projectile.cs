@@ -8,13 +8,6 @@
     public class Projectile : MonoBehaviour {
         #region Settings
         [SerializeField, Min(0)] private int damages = 20;
-        [SerializeField, Required] private new Collider collider = null;
-        #endregion
-
-        #region Setup
-        public void SetIgnoredCollider(Collider ignoredCol) {
-            Physics.IgnoreCollision(collider, ignoredCol);
-        }
         #endregion
 
         #region Physic Callbacks

@@ -6,7 +6,7 @@
     /// Simple AI Behaviour
     /// Targets the player, chase him and stops if too close
     /// </summary>
-    public class TDSAIControler : MonoBehaviour {
+    public class TDSAIControler : TDSControler {
         #region Contants
         private const float UPDATE_RATE = 0.15f;
         #endregion
@@ -16,7 +16,11 @@
 
         [Header("Movement")]
         [SerializeField] private float stopDistance = 3f;
+        [SerializeField, Min(0f)] private float focusPlayerDamping = 0.2f;
         [SerializeField, Required] private TDSAIMovements movements = null;
+
+        [Header("Attack")]
+        [SerializeField] private float attackRange = 6f;
 
         [Header("Sight")]
         [SerializeField] private float sightRadius = 1f;
@@ -25,6 +29,7 @@
 
         #region Current
         private float currentUpdateTimer = 0f;
+        private bool attacking = false;
         #endregion
 
         #region Callbacks
@@ -34,6 +39,9 @@
             }
 
             currentUpdateTimer = Random.Range(0f, UPDATE_RATE);
+            if (weapon) {
+                weapon.BindToControler(this);
+            }
         }
 
         private void Update() {
@@ -41,12 +49,34 @@
             currentUpdateTimer += Time.deltaTime;
 
             if (!ReferenceEquals(target, null)) {
-
                 //Check target is expensive, we don't necessarily need to update it every frame
                 if(currentUpdateTimer > UPDATE_RATE) {
-                    bool seeTarget = SeeTarget(target.transform.position);
-                    UpdateMovementState(target.transform.position, seeTarget);
+                    bool isSeeingTarget = SeeTarget(target.transform.position);
+                    float sqrAttackRange = attackRange * attackRange;
+
+                    bool canAttack = Vector3.SqrMagnitude(transform.position - target.transform.position) < sqrAttackRange && isSeeingTarget;
+
+                    if (canAttack != attacking) {
+                        attacking = canAttack;
+
+                        //Nav Mesh Agent must stop updating its rotation if target is seen
+                        movements.AttachedNavMeshAgent.updateRotation = !canAttack;
+
+                        if(!ReferenceEquals(weapon, null)) {
+                            if (attacking) {
+                                weapon.Trigger();
+                            } else {
+                                weapon.Release();
+                            }
+                        }
+                    }
+
+                    UpdateMovementState(target.transform.position, isSeeingTarget);
                     currentUpdateTimer = 0f;
+                }
+
+                if (attacking) {
+                    LookAtTarget();
                 }
             }
         }
@@ -66,6 +96,13 @@
             } else if (!isClose && movements.IsStopped) {
                 movements.SetActiveMovement(true);
             }
+        }
+
+        private void LookAtTarget() {
+            Vector3 targetPos = TDSPlayerControler.CurrentControlerInstance.transform.position;
+            aimVector = targetPos - transform.position;
+            Quaternion targetRotation = Quaternion.LookRotation(aimVector, Vector3.up);
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime / focusPlayerDamping);
         }
         #endregion
 

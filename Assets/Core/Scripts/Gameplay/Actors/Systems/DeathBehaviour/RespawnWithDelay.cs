@@ -28,7 +28,8 @@
 
         private void Respawn() {
             targetPlayer.gameObject.SetActive(true);
-            Debug.Log("Respawn");
+            targetPlayer.transform.position = PlayerStart.Instance.transform.position;
+            targetPlayer.HealthSystem.Heal(targetPlayer.HealthSystem.MaxHealth);
         } 
         #endregion
     }

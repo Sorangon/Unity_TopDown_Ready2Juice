@@ -31,7 +31,6 @@
         public Collider AttachedCollider => collider;
         #endregion
 
-
         #region Callbacks
         private void FixedUpdate() {
             CalculateMovement();
