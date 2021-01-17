@@ -14,6 +14,11 @@
         #endregion
 
         #region Callbacks
+        private void OnEnable() {
+            rigidbody.velocity = Vector3.zero;
+            rigidbody.angularVelocity = Vector3.zero;
+        }
+
         private void FixedUpdate() {
             Vector3 dir = direction;
             if (!worldSpaceRelative) {

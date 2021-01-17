@@ -48,6 +48,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damages: 20
+  mask:
+    serializedVersion: 2
+    m_Bits: 0
+  poolableObjectComponent: {fileID: 0}
   explosionRadius: 4
 --- !u!114 &-8902633170069287303
 MonoBehaviour:
@@ -78,7 +82,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifespan: 2
-  sendToPool: 0
+  poolableObject: {fileID: 0}
 --- !u!54 &156413419404864352
 Rigidbody:
   m_ObjectHideFlags: 0

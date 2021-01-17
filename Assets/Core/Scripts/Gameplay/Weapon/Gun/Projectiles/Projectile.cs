@@ -7,13 +7,13 @@
     public class Projectile : MonoBehaviour {
         #region Settings
         [SerializeField, Min(0)] protected int damages = 20;
-        [SerializeField] LayerMask mask = new LayerMask();
+        [SerializeField] private LayerMask mask = new LayerMask();
         #endregion
 
         #region Physic Callbacks
         private void OnCollisionEnter(Collision collision) {
             OnImpact(collision);
-            Destroy(this.gameObject);
+            DestroyProjectile();
         }
         #endregion
 
@@ -22,6 +22,10 @@
             if (TryGetHealthComponent(GetRootGameObject(collision.collider), out Health health)) {
                 health.InflictDamages(damages);
             }
+        }
+
+        public void DestroyProjectile() {
+            Destroy(gameObject);
         }
         #endregion
 

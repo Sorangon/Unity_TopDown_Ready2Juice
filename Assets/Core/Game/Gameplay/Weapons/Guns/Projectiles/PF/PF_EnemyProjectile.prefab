@@ -48,7 +48,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damages: 20
-  collider: {fileID: 7457616593388421794}
+  mask:
+    serializedVersion: 2
+    m_Bits: 0
+  poolableObjectComponent: {fileID: 0}
 --- !u!114 &-8902633170069287303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,8 +80,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0944486d93affea4fb7a3bf6551f33ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifespan: 4
-  sendToPool: 0
+  lifespan: 2
+  poolableObject: {fileID: 0}
 --- !u!54 &156413419404864352
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -154,7 +157,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 87f61bed50845014cbdcbc1d607ff6b3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

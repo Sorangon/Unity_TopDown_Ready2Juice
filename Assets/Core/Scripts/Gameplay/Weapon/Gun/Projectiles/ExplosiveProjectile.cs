@@ -6,6 +6,7 @@
     /// </summary>
     public class ExplosiveProjectile : Projectile {
         #region Settings
+        [Header("Explosion Settings")]  
         [SerializeField] private float explosionRadius = 2f;
         #endregion
 
@@ -23,7 +24,7 @@
                     health.InflictDamages(damages);
                 }
                 if(root.TryGetComponent(out Projectile proj)) {
-                    Destroy(proj.gameObject);
+                    proj.DestroyProjectile();
                 }
             }
         }

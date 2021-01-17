@@ -1,10 +1,6 @@
 {
-    "name": "TopDownR2J.Gameplay",
-    "references": [
-        "Unity.InputSystem",
-        "NaughtyAttributes.Core",
-        "TopDownR2J.Utility"
-    ],
+    "name": "TopDownR2J.Utility",
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

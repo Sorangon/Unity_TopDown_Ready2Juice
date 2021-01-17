@@ -20,7 +20,7 @@
                 spreadAngle = Random.Range(-spread * 0.5f, spread * 0.5f);
             }
             Quaternion projRotation = Quaternion.AngleAxis(Owner.AimAngle + spreadAngle, Vector3.up);
-            Projectile instance = Instantiate(projectile, muzzleTransform.position, projRotation);
+            Instantiate(projectile.gameObject, muzzleTransform.position, projRotation);
         }
         #endregion
     }

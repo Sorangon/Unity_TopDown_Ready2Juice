@@ -48,7 +48,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damages: 20
-  collider: {fileID: 7457616593388421794}
+  mask:
+    serializedVersion: 2
+    m_Bits: 0
+  poolableObjectComponent: {fileID: 0}
 --- !u!114 &-8902633170069287303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,7 +81,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifespan: 2
-  sendToPool: 0
+  poolableObject: {fileID: 0}
 --- !u!54 &156413419404864352
 Rigidbody:
   m_ObjectHideFlags: 0

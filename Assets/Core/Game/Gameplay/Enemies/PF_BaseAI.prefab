@@ -50,6 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 40
+  currentHealth: 100
   deathBehaviour: {fileID: 0}
   deathBehaviourParameter: {fileID: 0}
 --- !u!114 &9143615964993156684
