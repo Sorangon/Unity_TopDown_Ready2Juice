@@ -1,6 +1,5 @@
 ﻿namespace TopDownShooter.Gameplay {
     using UnityEngine;
-    using NaughtyAttributes;
 
     /// <summary>
     /// Base health system for game objects
@@ -8,26 +7,23 @@
     public class Health : MonoBehaviour {
         #region Settings
         [SerializeField, Min(0)] private int maxHealth = 100;
+        [SerializeField, Min(0)] private int currentHealth = 100; 
         [Header("Death")]
         [SerializeField] private DeathBehaviour deathBehaviour = null;
         [SerializeField] private Object deathBehaviourParameter = null;
         #endregion
 
-        #region Currents
-        [ShowNonSerializedField]
-        private int currentHealth = 100; 
-        #endregion
-
         #region Properties
         public int MaxHealth => maxHealth;
         public int CurrentHealth => currentHealth;
-
         public float CurrentHealthRatio => (float)currentHealth / (float)maxHealth;
         #endregion
 
         #region Callbacks
         private void Start() {
-            currentHealth = maxHealth;
+            if(currentHealth > maxHealth) {
+                currentHealth = maxHealth;
+            }
         }
         #endregion
 
@@ -64,7 +60,6 @@
         #endregion
 
         #region Die
-        [ContextMenu("Die")]
         public void Die() {
             if(deathBehaviour != null) {
                 deathBehaviour.Execute(deathBehaviourParameter);

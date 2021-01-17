@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e78447fda0b549d459c4563c40acdd0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 40
   deathBehaviour: {fileID: 0}
   deathBehaviourParameter: {fileID: 0}
 --- !u!114 &9143615964993156684
@@ -64,7 +64,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f54148c5ab0150d4480b64163e849d79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collider: {fileID: 8274183852145389004}
   weapon: {fileID: 7895940227792655692}
   stopDistance: 6
   focusPlayerDamping: 0.2
