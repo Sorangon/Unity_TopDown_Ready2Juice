@@ -8,7 +8,7 @@
     /// </summary>
     public class TDSAIControler : TDSControler {
         #region Contants
-        private const float UPDATE_RATE = 0.15f;
+        private const float UpdateRate = 0.15f;
         #endregion
 
         #region Settings
@@ -38,7 +38,7 @@
                 movements.SetTarget(TDSPlayerControler.CurrentControlerInstance.transform);
             }
 
-            currentUpdateTimer = Random.Range(0f, UPDATE_RATE);
+            currentUpdateTimer = Random.Range(0f, UpdateRate);
             if (weapon) {
                 weapon.BindToControler(this);
             }
@@ -50,7 +50,7 @@
 
             if (!ReferenceEquals(target, null)) {
                 //Check target is expensive, we don't necessarily need to update it every frame
-                if(currentUpdateTimer > UPDATE_RATE) {
+                if(currentUpdateTimer > UpdateRate) {
                     bool isSeeingTarget = SeeTarget(target.transform.position);
                     float sqrAttackRange = attackRange * attackRange;
 
@@ -112,13 +112,13 @@
             Ray ray = new Ray(transform.position, viewDir);
             if(Physics.SphereCast(ray, sightRadius, out RaycastHit hit, viewDir.magnitude, sightLayers)) {
 #if UNITY_EDITOR
-                Debug.DrawLine(transform.position, hit.point, Color.red, UPDATE_RATE);
+                Debug.DrawLine(transform.position, hit.point, Color.red, UpdateRate);
 #endif
                 return false;
             } 
 #if UNITY_EDITOR
             else {
-                Debug.DrawLine(transform.position, target, Color.green, UPDATE_RATE); 
+                Debug.DrawLine(transform.position, target, Color.green, UpdateRate); 
             }
 #endif
             return true;

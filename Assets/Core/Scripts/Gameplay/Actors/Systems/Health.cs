@@ -7,7 +7,9 @@
     public class Health : MonoBehaviour {
         #region Settings
         [SerializeField, Min(0)] private int maxHealth = 100;
-        [SerializeField, Min(0)] private int currentHealth = 100; 
+        [SerializeField, Min(0)] private int currentHealth = 100;
+        public bool invicible = false;
+
         [Header("Death")]
         [SerializeField] private DeathBehaviour deathBehaviour = null;
         [SerializeField] private Object deathBehaviourParameter = null;
@@ -40,7 +42,7 @@
         }
 
         public void InflictDamages(int amount) {
-            if(amount < 0) {
+            if(amount < 0 || invicible) {
                 return;
             }
 

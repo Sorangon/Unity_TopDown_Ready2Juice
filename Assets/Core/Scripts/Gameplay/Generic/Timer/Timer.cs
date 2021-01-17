@@ -42,6 +42,10 @@
             elapsedTime = 0f;
         }
 
+        public void Cancel() {
+            TimerHandle.UnregisterTimer(this);
+        }
+
         public void Stop() {
             callback.Invoke();
             TimerHandle.UnregisterTimer(this);

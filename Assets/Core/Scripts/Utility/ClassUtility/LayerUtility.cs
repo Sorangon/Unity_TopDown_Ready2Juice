@@ -6,7 +6,7 @@
     /// </summary>
     public static class LayerUtility {
         #region Constants
-        private const int LAYERS_COUNT = 16;
+        private const int LayersCount = 16;
         #endregion
 
         #region Methods
@@ -17,7 +17,7 @@
         public static LayerMask GetLayerMask(int layerId) {
             LayerMask mask = new LayerMask();
 
-            for (int i = 0; i < LAYERS_COUNT; i++) {
+            for (int i = 0; i < LayersCount; i++) {
                 if(!Physics.GetIgnoreLayerCollision(i, layerId) && LayerMask.LayerToName(i).Length > 0){
                     int layerValue = 1 << i;
                     mask.value += layerValue;

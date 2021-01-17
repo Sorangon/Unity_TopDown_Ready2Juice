@@ -11,15 +11,15 @@
         #endregion
 
         #region Physic Callbacks
-        private void OnCollisionEnter(Collision collision) {
-            OnImpact(collision);
+        private void OnTriggerEnter(Collider col) {
+            OnImpact(col);
             DestroyProjectile();
         }
         #endregion
 
         #region Impact
-        protected virtual void OnImpact(Collision collision) {
-            if (TryGetHealthComponent(GetRootGameObject(collision.collider), out Health health)) {
+        protected virtual void OnImpact(Collider collider) {
+            if (TryGetHealthComponent(GetRootGameObject(collider), out Health health)) {
                 health.InflictDamages(damages);
             }
         }

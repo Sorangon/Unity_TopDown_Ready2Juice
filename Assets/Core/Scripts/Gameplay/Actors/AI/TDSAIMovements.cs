@@ -8,7 +8,7 @@
     /// </summary>
     public class TDSAIMovements : MonoBehaviour {
         #region Constants
-        private const float UPDATE_RATE = 0.4f;
+        private const float UpdateRate = 0.4f;
         #endregion
 
         #region Settings
@@ -28,7 +28,7 @@
                 navMeshAgent.SetDestination(currentTarget.position);
             }
 
-            currentUpdateTimer = Random.Range(0f, UPDATE_RATE);
+            currentUpdateTimer = Random.Range(0f, UpdateRate);
         }
 
         private void Update() {
@@ -37,7 +37,7 @@
                 //We don't need to update the nav mesh target each frame
                 //Put a timer will reduce the number of times the navmesh agent will retarget a position
                 currentUpdateTimer += Time.deltaTime;
-                if (currentUpdateTimer > UPDATE_RATE) {
+                if (currentUpdateTimer > UpdateRate) {
                     if (currentTarget != null) {
                         navMeshAgent.SetDestination(currentTarget.position);
                     }

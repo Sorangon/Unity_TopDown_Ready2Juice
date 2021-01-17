@@ -2,7 +2,7 @@
     using UnityEngine;
 
     /// <summary>
-    /// A projectile that inflict damages in a range a impact
+    /// A projectile that inflict damages in a range on impact
     /// </summary>
     public class ExplosiveProjectile : Projectile {
         #region Settings
@@ -15,7 +15,7 @@
         #endregion
 
         #region Impact
-        protected override void OnImpact(Collision collision) {
+        protected override void OnImpact(Collider col) {
             int collisionsCount = Physics.OverlapSphereNonAlloc(transform.position, explosionRadius, collisions, LayerUtility.GetLayerMask(gameObject.layer));
             for (int i = 0; i < collisionsCount; i++) {
                 GameObject root = GetRootGameObject(collisions[i]);

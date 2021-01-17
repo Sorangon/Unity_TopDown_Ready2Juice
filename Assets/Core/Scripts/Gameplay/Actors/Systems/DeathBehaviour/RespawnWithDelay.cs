@@ -8,6 +8,7 @@
     public class RespawnWithDelay : DeathBehaviour {
         #region Datas
         [SerializeField] private float respawnDelay = 1f;
+        [SerializeField] private float invincibilityTime = 5f;
         #endregion
 
         #region Currents
@@ -30,7 +31,12 @@
             targetPlayer.gameObject.SetActive(true);
             targetPlayer.transform.position = PlayerStart.Instance.transform.position;
             targetPlayer.HealthSystem.Heal(targetPlayer.HealthSystem.MaxHealth);
-        } 
+
+            //Invicibility time
+            targetPlayer.HealthSystem.invicible = true;
+            Timer invicibilityTimer = new Timer(respawnDelay, () => { targetPlayer.HealthSystem.invicible = false; });
+            invicibilityTimer.Play();
+        }
         #endregion
     }
 }
