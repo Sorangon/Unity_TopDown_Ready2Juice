@@ -1,0 +1,17 @@
+{
+    "name": "TopDownR2J.UI",
+    "references": [
+        "TopDownR2J.Gameplay",
+        "TopDownR2J.Utility",
+        "Unity.TextMeshPro"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

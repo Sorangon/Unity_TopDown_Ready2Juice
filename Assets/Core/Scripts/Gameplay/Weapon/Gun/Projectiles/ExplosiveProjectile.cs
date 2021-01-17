@@ -1,4 +1,5 @@
 ﻿namespace TopDownShooter.Gameplay {
+    using TopDownShooter.Utility;
     using UnityEngine;
 
     /// <summary>

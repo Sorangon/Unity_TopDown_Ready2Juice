@@ -34,7 +34,7 @@
 
             //Invicibility time
             targetPlayer.HealthSystem.invicible = true;
-            Timer invicibilityTimer = new Timer(respawnDelay, () => { targetPlayer.HealthSystem.invicible = false; });
+            Timer invicibilityTimer = new Timer(invincibilityTime, () => { targetPlayer.HealthSystem.invicible = false; });
             invicibilityTimer.Play();
         }
         #endregion

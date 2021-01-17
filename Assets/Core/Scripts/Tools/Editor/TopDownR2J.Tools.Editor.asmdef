@@ -1,0 +1,17 @@
+{
+    "name": "TopDownR2J.Tools.Editor",
+    "references": [
+        "GUID:308e1810dbe313b429eede438e988d83"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

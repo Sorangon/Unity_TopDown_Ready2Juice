@@ -1,9 +1,10 @@
-﻿namespace TopDownShooter.Gameplay {
+﻿namespace TopDownShooter.Utility {
     using UnityEngine;
 
     /// <summary>
     /// Base singleton class
     /// </summary>
+    [DefaultExecutionOrder(-500)]
     public class SingletonMonoBehaviour<T> : MonoBehaviour where T : MonoBehaviour {
         #region Currents
         private static T instance = null;
@@ -14,7 +15,7 @@
         #endregion
 
         #region Callbacks
-        private void Awake() {
+        protected virtual void Awake() {
             if(instance == null) {
                 instance = this as T;
             } else {

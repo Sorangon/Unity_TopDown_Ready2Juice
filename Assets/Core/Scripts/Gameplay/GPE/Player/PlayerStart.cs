@@ -1,4 +1,5 @@
 ﻿namespace TopDownShooter.Gameplay {
+    using TopDownShooter.Utility;
 
     /// <summary>
     /// Base spawner for player

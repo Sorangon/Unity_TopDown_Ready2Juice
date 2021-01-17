@@ -3,7 +3,8 @@
     "references": [
         "Unity.InputSystem",
         "NaughtyAttributes.Core",
-        "TopDownR2J.Utility"
+        "TopDownR2J.Utility",
+        "TopDownR2J.Tools.Runtime"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
