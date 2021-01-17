@@ -15,13 +15,14 @@
 
         #region Impact
         protected override void OnImpact(Collision collision) {
-            //int colMask = Physics.Coll;
-            int collisionsCount = Physics.OverlapSphereNonAlloc(transform.position, explosionRadius, collisions);
+            int collisionsCount = Physics.OverlapSphereNonAlloc(transform.position, explosionRadius, collisions, LayerUtility.GetLayerMask(gameObject.layer));
             for (int i = 0; i < collisionsCount; i++) {
-                if(TryGetHealthComponent(collisions[i], out Health health)){
+                GameObject root = GetRootGameObject(collisions[i]);
+
+                if(TryGetHealthComponent(root, out Health health)){
                     health.InflictDamages(damages);
                 }
-                if(collisions[i].TryGetComponent(out Projectile proj)) {
+                if(root.TryGetComponent(out Projectile proj)) {
                     Destroy(proj.gameObject);
                 }
             }
