@@ -20,6 +20,8 @@
 
         #region Properties
         public bool Reloaded => currentReloadTime > reloadTime;
+        public bool Holding => holding;
+        public bool ContinuousAttack => continuousAttack;
         public TDSControler Owner => owner;
         #endregion
 
@@ -35,6 +37,7 @@
         #region Callbacks
         private void OnEnable() {
             holding = false;
+            currentReloadTime = reloadTime;
         }
 
         private void Update() {

@@ -48,9 +48,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damages: 20
-  mask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!114 &-8902633170069287303
 MonoBehaviour:
   m_ObjectHideFlags: 0

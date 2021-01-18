@@ -1,4 +1,5 @@
 ﻿namespace TopDownShooter.Gameplay {
+    using System;
     using UnityEngine;
     using UnityEngine.InputSystem;
 
@@ -11,6 +12,7 @@
         [SerializeField] private TDSCharacterMovements targetCharacter = null;
         [SerializeField] private Weapon currentWeapon = null;
         [SerializeField] private Health healthSystem = null;
+        [SerializeField] private WeaponSelector weaponSelector = null;
 
         [Header("Mouse")]
         [SerializeField] private LayerMask mouseRaycastMask = new LayerMask();
@@ -38,12 +40,15 @@
             inputs.Enable();
             inputs.Player.Fire.started += OnFireStart;
             inputs.Player.Fire.canceled += OnFireCanceled;
+            inputs.Player.SwitchWeapon.started += OnSwitchWeaponStart;
             currentControlerInstance = this;
         }
+
 
         private void OnDisable() {
             inputs.Player.Fire.started -= OnFireStart;
             inputs.Player.Fire.canceled -= OnFireCanceled;
+            inputs.Player.SwitchWeapon.started -= OnSwitchWeaponStart;
             inputs.Disable();
         }
 
@@ -101,6 +106,19 @@
         private void OnFireCanceled(InputAction.CallbackContext context) {
             if (!ReferenceEquals(currentWeapon, null)) {
                 currentWeapon.Release();
+            }
+        }
+        
+        private void OnSwitchWeaponStart(InputAction.CallbackContext context) {
+            bool wasHolding = false;
+
+            if(!ReferenceEquals(currentWeapon, null)) {
+                wasHolding |= (currentWeapon.Holding && currentWeapon.ContinuousAttack);
+            }
+
+            weaponSelector.SwitchWeapon();
+            if (wasHolding) {
+                currentWeapon.Trigger();
             }
         }
         #endregion

@@ -1,5 +1,4 @@
 ﻿namespace TopDownShooter.Gameplay {
-    using TopDownShooter.Utility;
     using UnityEngine;
 
     /// <summary>
@@ -8,7 +7,6 @@
     public class Projectile : MonoBehaviour {
         #region Settings
         [SerializeField, Min(0)] protected int damages = 20;
-        [SerializeField] private LayerMask mask = new LayerMask();
         #endregion
 
         #region Physic Callbacks
@@ -59,11 +57,5 @@
             return root.gameObject;
         }
         #endregion
-
-        [ContextMenu("Get Layer Mask")]
-        public void GetLayerMask() {
-            Debug.Log("This mask value : " + mask.value);
-            Debug.Log("Layer Mask Value : " + LayerUtility.GetLayerMask(gameObject.layer).value);
-        }
     }
 }

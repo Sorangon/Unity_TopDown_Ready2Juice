@@ -47,10 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85fe3f9c3c9c5524e99d94a4efe28249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damages: 20
-  mask:
-    serializedVersion: 2
-    m_Bits: 0
+  damages: 40
   explosionRadius: 4
 --- !u!114 &-8902633170069287303
 MonoBehaviour:
@@ -64,7 +61,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cff9d0031c4a61944992d89f390a51c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: {x: 0, y: 0, z: 30}
+  direction: {x: 0, y: 0, z: 20}
   speedMultiplier: 1
   worldSpaceRelative: 0
   rigidbody: {fileID: 156413419404864352}
@@ -125,7 +122,7 @@ Transform:
   m_GameObject: {fileID: 2568813758748130465}
   m_LocalRotation: {x: -0.70710677, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0.00000011921, y: 0, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children: []
   m_Father: {fileID: 4475466583933869648}
   m_RootOrder: 0
@@ -156,7 +153,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 108fd7b4dae1231469769cb1dd45dd21, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
