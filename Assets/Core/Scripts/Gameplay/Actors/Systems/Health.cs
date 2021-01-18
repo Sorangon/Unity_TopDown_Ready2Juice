@@ -64,7 +64,7 @@
         #region Die
         public void Die() {
             if(deathBehaviour != null) {
-                deathBehaviour.Execute(deathBehaviourParameter);
+                deathBehaviour.Execute(this, deathBehaviourParameter);
             } else {
                 Destroy(gameObject);
             }

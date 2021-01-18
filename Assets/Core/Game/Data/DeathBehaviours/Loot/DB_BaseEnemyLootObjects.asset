@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b92b1a8733c60e4f8ab929abb5f8d1b, type: 3}
+  m_Name: DB_BaseEnemyLootObjects
+  m_EditorClassIdentifier: 
+  lootRadius: 1.5
+  lootableObjects:
+  - lootableObject: {fileID: 8563174887197051259, guid: 4a63b59178fc8cf48bd3c73fd1ec8835,
+      type: 3}
+    countRange: {x: 1, y: 1}
+    spawnProbability: 0.2
+  - lootableObject: {fileID: 4017645054351339122, guid: 69d66b8e593b44041aa1ac5cda5b9fbc,
+      type: 3}
+    countRange: {x: 2, y: 4}
+    spawnProbability: 1

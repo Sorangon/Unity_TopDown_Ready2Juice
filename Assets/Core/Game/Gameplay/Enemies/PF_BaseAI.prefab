@@ -51,7 +51,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 40
   currentHealth: 100
-  deathBehaviour: {fileID: 0}
+  invicible: 0
+  deathBehaviour: {fileID: 11400000, guid: 61164de2fb1eb9547992c73c75c1748f, type: 2}
   deathBehaviourParameter: {fileID: 0}
 --- !u!114 &9143615964993156684
 MonoBehaviour:
