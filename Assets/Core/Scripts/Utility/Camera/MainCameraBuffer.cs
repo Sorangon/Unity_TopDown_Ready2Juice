@@ -1,4 +1,4 @@
-﻿namespace TopDownShooter.Gameplay {
+﻿namespace TopDownShooter.Utility {
     using UnityEngine;
     using NaughtyAttributes;
 

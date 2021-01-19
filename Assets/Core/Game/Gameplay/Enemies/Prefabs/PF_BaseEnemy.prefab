@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1875912178683119315}
   - component: {fileID: 8274183852145389004}
   m_Layer: 12
-  m_Name: PF_BaseAI
+  m_Name: PF_BaseEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54,6 +54,18 @@ MonoBehaviour:
   invicible: 0
   deathBehaviour: {fileID: 11400000, guid: 61164de2fb1eb9547992c73c75c1748f, type: 2}
   deathBehaviourParameter: {fileID: 0}
+  onHeal:
+    m_PersistentCalls:
+      m_Calls: []
+  onTakeDamages:
+    m_PersistentCalls:
+      m_Calls: []
+  onAddMaxHealth:
+    m_PersistentCalls:
+      m_Calls: []
+  onDie:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &9143615964993156684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,7 +134,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.65
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &955040701949666696
 GameObject:

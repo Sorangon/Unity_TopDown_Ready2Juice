@@ -1,5 +1,7 @@
 ﻿namespace TopDownShooter.Gameplay {
     using UnityEngine;
+    using UnityEngine.Events;
+    using NaughtyAttributes;
 
     /// <summary>
     /// Base class for weapons
@@ -10,6 +12,10 @@
         [SerializeField] protected float reloadTime = 0.2f;
         [SerializeField] private bool continuousAttack = false;
         [SerializeField] private bool startWithRandomReloadTime = false;
+        #endregion
+
+        #region Events
+        [SerializeField, Foldout("Events")] private UnityEvent onExecute = new UnityEvent();
         #endregion
 
         #region Currents
@@ -47,6 +53,7 @@
 
             if (holding && Reloaded) {
                 Execute();
+                onExecute?.Invoke();
                 if (!continuousAttack) {
                     holding = false;
                 }

@@ -1,5 +1,7 @@
 ﻿namespace TopDownShooter.Gameplay {
     using UnityEngine;
+    using NaughtyAttributes;
+    using UnityEngine.Events;
 
     /// <summary>
     /// Base health system for game objects
@@ -13,6 +15,16 @@
         [Header("Death")]
         [SerializeField] private DeathBehaviour deathBehaviour = null;
         [SerializeField] private Object deathBehaviourParameter = null;
+
+        [Foldout("Events")]
+        [SerializeField] private UnityEvent onHeal = new UnityEvent();
+        [Foldout("Events")]
+        [SerializeField] private UnityEvent onTakeDamages = new UnityEvent();
+        [Foldout("Events")]
+        [SerializeField] private UnityEvent onAddMaxHealth = new UnityEvent();
+        [Foldout("Events")]
+        [SerializeField] private UnityEvent onDie = new UnityEvent();
+
         #endregion
 
         #region Properties
@@ -39,6 +51,8 @@
             if(currentHealth > maxHealth) {
                 currentHealth = maxHealth;
             }
+
+            onHeal?.Invoke();
         }
 
         public void InflictDamages(int amount) {
@@ -50,6 +64,8 @@
             if(currentHealth <= 0) {
                 Die();
             }
+
+            onTakeDamages?.Invoke();
         }
 
         public void AddMaxHealth(int amount, float healthPercentageToAdd = 0f) {
@@ -58,6 +74,8 @@
             if(healthPercentageToAdd > 0) {
                 currentHealth += Mathf.CeilToInt(amount * healthPercentageToAdd);
             }
+
+            onAddMaxHealth?.Invoke();
         }
         #endregion
 
@@ -68,6 +86,8 @@
             } else {
                 Destroy(gameObject);
             }
+
+            onDie?.Invoke();
         }
         #endregion
     }

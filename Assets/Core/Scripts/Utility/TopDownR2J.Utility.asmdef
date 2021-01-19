@@ -1,6 +1,8 @@
 {
     "name": "TopDownR2J.Utility",
-    "references": [],
+    "references": [
+        "NaughtyAttributes.Core"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

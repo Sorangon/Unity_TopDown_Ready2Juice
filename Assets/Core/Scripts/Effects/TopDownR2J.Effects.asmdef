@@ -1,10 +1,7 @@
 {
-    "name": "TopDownR2J.UI",
+    "name": "TopDownR2J.Effects",
     "references": [
-        "TopDownR2J.Gameplay",
-        "TopDownR2J.Utility",
-        "Unity.TextMeshPro",
-        "DOTween.Modules"
+        "TopDownR2J.Utility"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
