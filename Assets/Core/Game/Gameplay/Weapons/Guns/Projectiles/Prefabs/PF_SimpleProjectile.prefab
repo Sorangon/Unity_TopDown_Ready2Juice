@@ -48,6 +48,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damages: 20
+  onImpact:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 1b124c7436eee504ba216e8b822bac79, type: 2}
+        m_MethodName: Play
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4475466583933869648}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &-8902633170069287303
 MonoBehaviour:
   m_ObjectHideFlags: 0

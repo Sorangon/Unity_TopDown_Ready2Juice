@@ -1,5 +1,7 @@
 ﻿namespace TopDownShooter.Gameplay {
     using UnityEngine;
+    using NaughtyAttributes;
+    using UnityEngine.Events;
 
     /// <summary>
     /// Base class for projectile
@@ -7,11 +9,14 @@
     public class Projectile : MonoBehaviour {
         #region Settings
         [SerializeField, Min(0)] protected int damages = 20;
+
+        [Foldout("Events"), SerializeField] private UnityEvent onImpact;
         #endregion
 
         #region Physic Callbacks
         private void OnTriggerEnter(Collider col) {
             OnImpact(col);
+            onImpact?.Invoke();
             DestroyProjectile();
         }
         #endregion

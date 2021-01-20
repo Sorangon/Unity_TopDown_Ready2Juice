@@ -1,5 +1,6 @@
 ﻿namespace TopDownShooter.Gameplay {
     using UnityEngine;
+    using TopDownShooter.Utility;
 
     /// <summary>
     /// Respawns the character with a delay

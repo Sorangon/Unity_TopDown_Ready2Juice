@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d18704cf4b121714ea0e84b303b2a838, type: 3}
   m_Name: SC_BaseGunShoot
   m_EditorClassIdentifier: 
-  duration: 0.5
-  strength: 1
-  vibrato: 0
-  randomness: 0
+  duration: 0.04
+  strength: 0.06
+  vibrato: 10
+  randomness: 50
   snapping: 0
-  fadeOut: 0
+  fadeOut: 1

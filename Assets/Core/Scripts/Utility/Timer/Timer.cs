@@ -1,4 +1,4 @@
-﻿namespace TopDownShooter.Gameplay {
+﻿namespace TopDownShooter.Utility {
     using UnityEngine;
 
     /// <summary>
@@ -27,10 +27,11 @@
 
         #region Behaviour
         public void Play() {
+            elapsedTime = 0f;
             TimerHandle.RegisterTimer(this);
         }
 
-        public void Update() {
+        internal void Update() {
             elapsedTime += Time.deltaTime;
 
             if (elapsedTime > duration) {

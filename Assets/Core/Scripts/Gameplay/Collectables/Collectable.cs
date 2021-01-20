@@ -1,6 +1,8 @@
 ﻿namespace TopDownShooter.Gameplay {
     using UnityEngine;
     using TopDownShooter.Tools;
+    using UnityEngine.Events;
+    using NaughtyAttributes;
 
     /// <summary>
     /// Base class for items that can collected
@@ -9,6 +11,8 @@
         #region Settings
         [Header("Collectable Settings")]
         [SerializeField, LayerField] private int targetLayer = 0;
+
+        [SerializeField, Foldout("Events")] UnityEvent onCollect = null; 
         #endregion
 
         #region Physics Callbacks
@@ -22,6 +26,7 @@
                 }
 
                 OnCollect(collector);
+                onCollect?.Invoke();
                 Destroy(gameObject);
             }
         }

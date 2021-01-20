@@ -1,4 +1,4 @@
-﻿namespace TopDownShooter.Gameplay {
+﻿namespace TopDownShooter.Utility {
     using UnityEngine;
     using System.Collections.Generic;
 
@@ -46,7 +46,7 @@
         /// Add a timer to the list
         /// </summary>
         /// <param name="safe">Check if the timer is already registered</param>
-        public static void RegisterTimer(Timer timer, bool safe = true) {
+        internal static void RegisterTimer(Timer timer, bool safe = true) {
             if (safe) {
                 if (!instance.timers.Contains(timer)) {
                     instance.timers.Add(timer);
@@ -56,7 +56,7 @@
             }
         }
 
-        public static void UnregisterTimer(Timer timer) {
+        internal static void UnregisterTimer(Timer timer) {
             instance.timers.Remove(timer);
         }
 

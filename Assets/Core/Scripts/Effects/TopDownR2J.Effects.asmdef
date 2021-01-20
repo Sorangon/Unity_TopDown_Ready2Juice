@@ -1,7 +1,9 @@
 {
     "name": "TopDownR2J.Effects",
     "references": [
-        "TopDownR2J.Utility"
+        "TopDownR2J.Utility",
+        "NaughtyAttributes.Core",
+        "DOTween.Modules"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
