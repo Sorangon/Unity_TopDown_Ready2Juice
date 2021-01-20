@@ -881,6 +881,9 @@ MonoBehaviour:
   prefab: {fileID: 720942061047837973, guid: 3c2c106b2f47b2c40958b52905a7b896, type: 3}
   randomRate: {x: 4, y: 6}
   parentObject: 0
+  onSpawn:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1004177734
 Transform:
   m_ObjectHideFlags: 0
@@ -989,6 +992,9 @@ MonoBehaviour:
   prefab: {fileID: 720942061047837973, guid: 3c2c106b2f47b2c40958b52905a7b896, type: 3}
   randomRate: {x: 4, y: 6}
   parentObject: 0
+  onSpawn:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1390766556
 Transform:
   m_ObjectHideFlags: 0
@@ -1222,6 +1228,9 @@ MonoBehaviour:
   prefab: {fileID: 720942061047837973, guid: 3c2c106b2f47b2c40958b52905a7b896, type: 3}
   randomRate: {x: 4, y: 6}
   parentObject: 0
+  onSpawn:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &2034071428
 Transform:
   m_ObjectHideFlags: 0
@@ -1279,6 +1288,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9f980a0ff888644f9f327f890f6c187, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onSpawn:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2124799171}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &7198249628101801499
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1348,8 +1371,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6298890818568860564, guid: f0d48b2315e04d44ea44d88ed72a696d,
         type: 3}
-      propertyPath: onExecute.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      propertyPath: onExecute.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6298890818568860564, guid: f0d48b2315e04d44ea44d88ed72a696d,
+        type: 3}
+      propertyPath: onExecute.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6298890818568860564, guid: f0d48b2315e04d44ea44d88ed72a696d,
+        type: 3}
+      propertyPath: onExecute.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6298890818568860564, guid: f0d48b2315e04d44ea44d88ed72a696d,
+        type: 3}
+      propertyPath: onExecute.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 6298890818568860564, guid: f0d48b2315e04d44ea44d88ed72a696d,
+        type: 3}
+      propertyPath: onExecute.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0d48b2315e04d44ea44d88ed72a696d, type: 3}

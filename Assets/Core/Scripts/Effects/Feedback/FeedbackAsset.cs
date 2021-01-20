@@ -51,10 +51,7 @@
         public void Play(Transform targetTransform) {
             Quaternion rotation = relativeRotation ? targetTransform.rotation : Quaternion.identity;
             Feedback inst;
-            if(pool.Count > 0) {
-            } else {
 
-            }
             inst = GetInstance(targetTransform.position, rotation);
 
             if (relativeScale) {

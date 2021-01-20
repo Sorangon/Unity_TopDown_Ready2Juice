@@ -1,5 +1,7 @@
 ﻿namespace TopDownShooter.Gameplay {
     using UnityEngine;
+    using NaughtyAttributes;
+    using UnityEngine.Events;
 
     /// <summary>
     /// Spawn object at a fixed rate
@@ -9,6 +11,8 @@
         [SerializeField] private GameObject prefab = null;
         [SerializeField, Min(0f)] private Vector2 randomRate = new Vector2(0.5f, 2f);
         [SerializeField] private bool parentObject = false;
+
+        [SerializeField, Foldout("Events")] private UnityEvent onSpawn = null;
         #endregion
 
         #region Currents

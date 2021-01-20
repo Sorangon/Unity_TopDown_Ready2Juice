@@ -30,7 +30,7 @@
 
         private void Respawn() {
             targetPlayer.HealthSystem.Heal(targetPlayer.HealthSystem.MaxHealth);
-            targetPlayer.transform.position = PlayerStart.Instance.transform.position;
+            PlayerStart.Instance.Spawn(targetPlayer);
             targetPlayer.gameObject.SetActive(true);
 
             //Invicibility time
