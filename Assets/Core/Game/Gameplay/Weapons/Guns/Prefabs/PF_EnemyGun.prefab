@@ -62,6 +62,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4944942911967909443, guid: 29a8dec1cfe9e6a4b9b46a2717ea0909,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -4721161306141507914, guid: e53757c7f2e60254faf4f9dfd1627a71,
+        type: 3}
     - target: {fileID: 5581047200708718269, guid: 29a8dec1cfe9e6a4b9b46a2717ea0909,
         type: 3}
       propertyPath: projectile
@@ -83,5 +89,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PF_EnemyGun
       objectReference: {fileID: 0}
+    - target: {fileID: 7168323407656657545, guid: 29a8dec1cfe9e6a4b9b46a2717ea0909,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9620782c1f520134fac2333e1ce6d738, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29a8dec1cfe9e6a4b9b46a2717ea0909, type: 3}

@@ -5275,6 +5275,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: PF_BasePlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 566875969594512007, guid: f0d48b2315e04d44ea44d88ed72a696d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2089983006597199889, guid: f0d48b2315e04d44ea44d88ed72a696d,
+        type: 3}
+      propertyPath: colorOverHealth.key0.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2089983006597199889, guid: f0d48b2315e04d44ea44d88ed72a696d,
+        type: 3}
+      propertyPath: colorOverHealth.key1.a
+      value: 0.39215687
+      objectReference: {fileID: 0}
+    - target: {fileID: 3271062343903965886, guid: f0d48b2315e04d44ea44d88ed72a696d,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5685887307089867172, guid: f0d48b2315e04d44ea44d88ed72a696d,
         type: 3}
       propertyPath: m_RootOrder
@@ -5355,6 +5375,16 @@ PrefabInstance:
       propertyPath: onExecute.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 6319272998244826008, guid: f0d48b2315e04d44ea44d88ed72a696d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9068251836227776594, guid: f0d48b2315e04d44ea44d88ed72a696d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3f3c5d16661a8ed4a9b9d0796d863f6a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0d48b2315e04d44ea44d88ed72a696d, type: 3}
 --- !u!4 &7198249628101801500 stripped
