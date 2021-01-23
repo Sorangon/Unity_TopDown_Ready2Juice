@@ -672,6 +672,21 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 2131305287089185109, guid: 1992472a82c8c3243bee51535e9d1183,
+        type: 3}
+      propertyPath: parentObject
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2131305287089185109, guid: 1992472a82c8c3243bee51535e9d1183,
+        type: 3}
+      propertyPath: randomRate.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2131305287089185109, guid: 1992472a82c8c3243bee51535e9d1183,
+        type: 3}
+      propertyPath: randomRate.y
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7574898658893340978, guid: 1992472a82c8c3243bee51535e9d1183,
         type: 3}
       propertyPath: m_RootOrder
@@ -1578,6 +1593,21 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 2131305287089185109, guid: 1992472a82c8c3243bee51535e9d1183,
+        type: 3}
+      propertyPath: parentObject
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2131305287089185109, guid: 1992472a82c8c3243bee51535e9d1183,
+        type: 3}
+      propertyPath: randomRate.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2131305287089185109, guid: 1992472a82c8c3243bee51535e9d1183,
+        type: 3}
+      propertyPath: randomRate.y
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7574898658893340978, guid: 1992472a82c8c3243bee51535e9d1183,
         type: 3}
       propertyPath: m_RootOrder
@@ -1661,6 +1691,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 2131305287089185109, guid: 1992472a82c8c3243bee51535e9d1183,
+        type: 3}
+      propertyPath: parentObject
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2131305287089185109, guid: 1992472a82c8c3243bee51535e9d1183,
+        type: 3}
+      propertyPath: randomRate.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2131305287089185109, guid: 1992472a82c8c3243bee51535e9d1183,
+        type: 3}
+      propertyPath: randomRate.y
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7574898658893340978, guid: 1992472a82c8c3243bee51535e9d1183,
         type: 3}
