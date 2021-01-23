@@ -16,15 +16,20 @@
         #region Behaviour
         internal void Setup(FeedbackAsset feedback) {
             owner = feedback;
+            float duration = 0f;
             if (feedback.ParticleSystem) {
                 particleSystem = Instantiate(feedback.ParticleSystem,transform);
                 particleSystem.transform.localPosition = Vector3.zero;
+                duration = owner.ParticleSystem.main.duration;
             }
             audioSource.clip = feedback.SoundEffect;
             audioSource.spatialBlend = feedback.SpatialBlend;
 
-            float duration = Mathf.Max(owner.SoundEffect.length, owner.ParticleSystem.main.duration) + 0.1f;
-            timer = new Timer(duration, OnComplete);
+            if (owner.SoundEffect) {
+                duration = Mathf.Max(duration, owner.SoundEffect.length);
+            }
+
+            timer = new Timer(duration + 0.1f, OnComplete);
         }
 
         internal void Play() {
