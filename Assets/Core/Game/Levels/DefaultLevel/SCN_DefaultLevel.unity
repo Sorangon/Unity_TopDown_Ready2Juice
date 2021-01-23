@@ -5473,16 +5473,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2089983006597199889, guid: f0d48b2315e04d44ea44d88ed72a696d,
-        type: 3}
-      propertyPath: colorOverHealth.key0.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2089983006597199889, guid: f0d48b2315e04d44ea44d88ed72a696d,
-        type: 3}
-      propertyPath: colorOverHealth.key1.a
-      value: 0.39215687
-      objectReference: {fileID: 0}
     - target: {fileID: 3271062343903965886, guid: f0d48b2315e04d44ea44d88ed72a696d,
         type: 3}
       propertyPath: m_Color.a
