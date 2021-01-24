@@ -18,7 +18,7 @@
             owner = feedback;
             float duration = 0f;
             if (feedback.ParticleSystem) {
-                particleSystem = Instantiate(feedback.ParticleSystem,transform);
+                particleSystem = Instantiate(feedback.ParticleSystem, transform);
                 particleSystem.transform.localPosition = Vector3.zero;
                 duration = owner.ParticleSystem.main.duration;
             }
@@ -33,7 +33,7 @@
         }
 
         internal void Play() {
-            if(particleSystem != null) {
+            if (particleSystem != null) {
                 particleSystem.Play();
             }
             audioSource.pitch = Random.Range(owner.PitchRange.x, owner.PitchRange.y);
