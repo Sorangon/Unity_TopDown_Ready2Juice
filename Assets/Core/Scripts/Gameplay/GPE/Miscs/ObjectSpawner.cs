@@ -41,6 +41,8 @@
             } else {
                 Instantiate(prefab, transform.position, transform.rotation);
             }
+
+            onSpawn?.Invoke();
         }
         #endregion
     }
