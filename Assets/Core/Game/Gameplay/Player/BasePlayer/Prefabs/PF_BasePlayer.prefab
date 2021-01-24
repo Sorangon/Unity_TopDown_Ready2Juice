@@ -452,21 +452,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -90.00001
       objectReference: {fileID: 0}
-    - target: {fileID: 5581047200708718269, guid: 29a8dec1cfe9e6a4b9b46a2717ea0909,
-        type: 3}
-      propertyPath: onExecute.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5581047200708718269, guid: 29a8dec1cfe9e6a4b9b46a2717ea0909,
-        type: 3}
-      propertyPath: onExecute.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5581047200708718269, guid: 29a8dec1cfe9e6a4b9b46a2717ea0909,
-        type: 3}
-      propertyPath: onExecute.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 5596683785253152433, guid: 29a8dec1cfe9e6a4b9b46a2717ea0909,
         type: 3}
       propertyPath: m_Name
