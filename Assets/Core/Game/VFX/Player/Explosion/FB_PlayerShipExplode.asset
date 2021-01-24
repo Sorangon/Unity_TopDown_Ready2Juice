@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a42f934478e012d4994b145287f68bac, type: 3}
-  m_Name: FB_EnemyProjectileImpact
+  m_Name: FB_PlayerShipExplode
   m_EditorClassIdentifier: 
-  particleSystem: {fileID: 5985673417192027693, guid: cba382b9dc2a12042bd03e87eb2a6286,
+  particleSystem: {fileID: 189683469281508798, guid: c2b3c03644650eb40abb91c788929993,
     type: 3}
-  relativeRotation: 1
+  relativeRotation: 0
   relativeScale: 0
   soundEffect: {fileID: 0}
   pitchRange: {x: 1, y: 1}
